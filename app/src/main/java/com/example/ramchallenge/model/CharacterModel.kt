@@ -1,7 +1,7 @@
-package com.example.ramchallenge.models
+package com.example.ramchallenge.model
 
-import com.example.ramchallenge.models.enums.GenderCharacterEnum
-import com.example.ramchallenge.models.enums.StatusCharacterEnum
+import com.example.ramchallenge.model.enums.GenderCharacterEnum
+import com.example.ramchallenge.model.enums.StatusCharacterEnum
 
 data class CharacterModel (
     val id : Int = 0,
@@ -13,7 +13,7 @@ data class CharacterModel (
     var origin : PlaceModel,
     var location : PlaceModel,
     val image : String = "",
-    val episode: ArrayList<String>? = null,
+    val episode: List<String>? = null,
     val url  : String = "",
     val created  : String = "" //TODO> Change for date
 )

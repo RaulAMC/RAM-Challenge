@@ -1,4 +1,4 @@
-package com.example.ramchallenge.models
+package com.example.ramchallenge.model
 
 data class EpisodeModel (
     val id: Int = 0,

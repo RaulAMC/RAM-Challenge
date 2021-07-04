@@ -1,4 +1,4 @@
-package com.example.ramchallenge.models
+package com.example.ramchallenge.model
 
 data class PlaceModel (
     val name: String = "",
