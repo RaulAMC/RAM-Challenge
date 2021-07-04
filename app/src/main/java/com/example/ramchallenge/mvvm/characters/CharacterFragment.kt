@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.ramchallenge.databinding.CharacterFragmentBinding
 import com.example.ramchallenge.model.CharacterModel
 
@@ -26,6 +25,7 @@ class CharacterFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        characterViewModel.onCreate()
 
         binding.characterList.layoutManager = LinearLayoutManager(context)
         val characterAdapter = CharacterAdapter(characterList)
@@ -34,8 +34,6 @@ class CharacterFragment : Fragment() {
             characterList.addAll(it)
             characterAdapter.notifyDataSetChanged()
         })
-
-        binding.testButton.setOnClickListener { characterViewModel.getCharacterList() }
 
     }
 

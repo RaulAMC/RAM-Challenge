@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_margin="@dimen/small_margin">
 
     <ImageView
-        android:id="@+id/item_character_image"
+        android:id="@+id/image"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/avatar_placeholder"
@@ -14,11 +15,56 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/item_character_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@+id/item_character_image"
+        android:id="@+id/name"
+        style="@style/title_style"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Rick sanches" />
+
+    <TextView
+        android:id="@+id/item_character_status_tag"
+        style="@style/normal_text_style.bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status_tag"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <TextView
+        android:id="@+id/status"
+        style="@style/normal_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/image"
+        app:layout_constraintStart_toStartOf="@+id/item_character_status_tag"
+        app:layout_constraintTop_toBottomOf="@+id/item_character_status_tag"
+        tools:text="Rick sanches" />
+
+    <TextView
+        android:id="@+id/location_tag"
+        style="@style/normal_text_style.bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/location_tag"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/location"
+        style="@style/normal_text_style"
+        android:layout_height="wrap_content"
+        android:layout_width="0sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/location_tag"
+        app:layout_constraintTop_toBottomOf="@+id/location_tag"
+        tools:text="Rick sanches" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

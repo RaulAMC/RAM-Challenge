@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Rick And Morty Challenge</string>
+
+    <string name="location_tag">Ultima ubicacion</string>
+    <string name="status_tag">Estado</string>
+    <string name="status_live">Vivo</string>
+    <string name="status_dead">Muerto</string>
+    <string name="status_unknown">Desconocido</string>
+
+
 </resources>

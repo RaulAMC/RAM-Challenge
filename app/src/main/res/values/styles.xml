@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="title_style">
+        <item name="android:layout_width">0sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/base_margin</item>
+        <item name="android:layout_marginEnd">@dimen/small_margin</item>
+        <item name="android:layout_marginTop">@dimen/small_margin</item>
+        <item name="android:textSize">@dimen/text_size_big</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="normal_text_style">
+        <item name="android:layout_marginStart">@dimen/small_margin</item>
+        <item name="android:layout_marginTop">@dimen/small_margin</item>
+        <item name="android:textSize">@dimen/text_size_base</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="normal_text_style.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
