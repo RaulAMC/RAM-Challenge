@@ -1,6 +1,6 @@
-package com.example.ramchallenge.connection
+package com.example.ramchallenge.data.network
 
-import com.example.ramchallenge.model.response.EpisodeResponse
+import com.example.ramchallenge.data.network.response.EpisodeResponse
 import retrofit2.http.GET
 
 interface EpisodeApi {

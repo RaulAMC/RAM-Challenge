@@ -1,4 +1,4 @@
-package com.example.ramchallenge.model.response
+package com.example.ramchallenge.data.network.response
 
 import com.example.ramchallenge.model.LocationModel
 import com.example.ramchallenge.model.PageInfoModel

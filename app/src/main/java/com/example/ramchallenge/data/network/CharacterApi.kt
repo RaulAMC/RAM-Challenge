@@ -1,6 +1,6 @@
-package com.example.ramchallenge.connection
+package com.example.ramchallenge.data.network
 
-import com.example.ramchallenge.model.response.CharacterResponse
+import com.example.ramchallenge.data.network.response.CharacterResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
