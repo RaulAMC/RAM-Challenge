@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ramchallenge.databinding.CharacterFragmentBinding
@@ -32,29 +30,33 @@ class CharacterFragment : Fragment() {
         characterViewModel.characterModel.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is State.Empty -> {
-                    binding.loadingBar.isVisible = false
+                    binding.loadingBar.visibility = View.GONE
                     binding.characterList.visibility = View.GONE
-//                    TODO("Create emptyView")
+                    binding.errorViewInclude.errorView.visibility = View.VISIBLE
+
                 }
                 is State.Loading -> {
-                    binding.loadingBar.isVisible = true
+                    binding.loadingBar.visibility = View.VISIBLE
                     binding.characterList.visibility = View.GONE
+                    binding.errorViewInclude.errorView.visibility = View.GONE
                 }
                 is State.Success -> {
                     characterList.addAll(it.data as List<CharacterModel>)
                     binding.characterList.layoutManager = LinearLayoutManager(context)
                     binding.characterList.adapter = CharacterAdapter(characterList)
 
-                    binding.loadingBar.isVisible = false
+                    binding.loadingBar.visibility = View.GONE
                     binding.characterList.visibility = View.VISIBLE
+                    binding.errorViewInclude.errorView.visibility = View.GONE
                 }
             }
 
 
 
         })
-
-
+        binding.errorViewInclude.characterErrorRetry.setOnClickListener {
+            characterViewModel.onCreate()
+        }
     }
 
     override fun onDestroy() {
